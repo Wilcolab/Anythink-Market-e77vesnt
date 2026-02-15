@@ -1,0 +1,20 @@
+function toSnakeCase(text) {
+    /**
+     * Converts a string to camelCase format.
+     * Removes spaces, hyphens, and underscores, capitalizing the first letter
+     * of each word after the first one.
+     * 
+     * Example:
+     * toCamelCase('hello_world') => 'helloWorld'
+     * toCamelCase('hello-world') => 'helloWorld'
+     * toCamelCase('hello world') => 'helloWorld'
+     */
+    return text
+        .replace(/([A-Z])/g, '_$1')
+        .replace(/[\s-]+/g, '_')
+        .toLowerCase()
+        .replace(/^_+|_+$/g, '')
+        .replace(/_+/g, '_');
+}
+
+module.exports = toSnakeCase;
